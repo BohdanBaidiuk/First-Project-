@@ -1,20 +1,13 @@
-#define CURL_STATICLIB
-#include "curl/curl.h"
-#include "findUrl.hpp"
-#include "Regex.hpp"
-#include"optionKonsole.hpp"
-#include <string>
+#include "ContentUrl.hpp";
+#include "optionKonsole.hpp"
 #include <iostream>
-#include <vector>
 
+int main(int argc, const char *argv[]) {
+  std::string url = "https://www.google.com";
+  size_t search_depth_url = 2;
+  std::cout << "Please input --help or -h " << std::endl;
+  search_urls(search_depth_url, url);
+  // EApplication(argc, argv,url, search_depth_url);
 
-int main(int argc, char **argv) {
-  std::string url = "google.com";
-  size_t search_depth_url = 4;
-  if (Check_Url(url)) {
-    find_url(url);
-  } else {
-    std::cout << "Not correct input url" << std::endl;
-  }
   return 0;
 }
